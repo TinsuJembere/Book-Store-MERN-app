@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-primary: "Montserrat", serif;
+  --font-secondary: "Nunito Sans", serif;
+  --color-primary: #FFCE1A;
+  --color-secondary: #0D0842;
+  --color-blackBG: #F3F3F3;
+  --color-favorite: #FF5841;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   padding: 5px;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+ .swiper-button-prev {
+    display: none !important;
+ }
+ .swiper-button-next{
+    @apply bg-white p-5 rounded-full z-50 shadow-md
+ }
+
+ .swiper-button-prev:after, .swiper-button-next:after{
+    font-size: 16px !important;
+ }
+
+ .btn-primary {
+    @apply bg-primary  px-12 py-2 rounded-md text-base font-secondary font-bold hover:bg-secondary hover:text-white transition-all duration-200 cursor-pointer
+ }
+
+.html{
+   scroll-behavior: smooth;
+}

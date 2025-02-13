@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+    --font-primary: "Montserrat", "serif";
+    --font-secondary: "Nunito Sans", "serif";
+    --color-primary: #FFCE1A;
+    --color-secondary : #0D0842;
+    --color--blackBG: #F3F3F3;
+    --color-Favorite: #FF5841
+  }
