@@ -6,16 +6,18 @@ import { AiOutlineUser } from "react-icons/ai";
 import avatarImg from "../assets/avatar.png";
 import { FiHeart } from "react-icons/fi";
 import { LuShoppingCart } from "react-icons/lu";
+import { useSelector } from "react-redux";
 
 function Navbar() {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
-  const currentUser = true;
+  const currentUser = false;
   const navigation = [
     { name: "Dashboard", href: "/dashboard" },
     { name: "Orders", href: "/orders" },
     { name: "Cart", href: "/cart" },
     { name: "Check Out", href: "/checkout" },
   ];
+  const cartQuantity = useSelector((state) => state.cart.totalQuantity);
   return (
     <header className="max-w-screen-2xl mx-auto px-4 py-6">
       <nav className="flex justify-between items-center">
@@ -64,7 +66,7 @@ function Navbar() {
                 )}
               </>
             ) : (
-              <AiOutlineUser />
+              <Link to={'/login'}><AiOutlineUser /></Link>
             )}
           </div>
           <button className="hidden sm:block">
@@ -75,7 +77,7 @@ function Navbar() {
             className="bg-primary rounded-sm p-1 sm:px-6 px-2 flex items-center gap-2"
           >
             <LuShoppingCart />
-            <button>0</button>
+            <button>{cartQuantity}</button>
           </Link>
         </div>
       </nav>
